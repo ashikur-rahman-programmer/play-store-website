@@ -11,7 +11,7 @@ const Navbar = () => {
     <>
       <li>
         <Link
-          className={`pb-1 hover:bg-transparent hover:text-green-600 ${pathName === "/" && "text-green-500 border-b border-green-600"}`}
+          className={`pb-1 text-xl font-semibold hover:bg-transparent hover:text-green-600 ${pathName === "/" && "text-green-500 border-b border-green-600"}`}
           href={"/"}
         >
           Home
@@ -19,7 +19,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className={`pb-1 hover:bg-transparent hover:text-green-600 ${pathName === "/apps" && "text-green-500 border-b border-green-600"}`}
+          className={`pb-1 text-xl font-semibold hover:bg-transparent hover:text-green-600 ${pathName === "/apps" && "text-green-500 border-b border-green-600"}`}
           href={"/apps"}
         >
           Apps
@@ -27,7 +27,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className={`pb-1 hover:bg-transparent hover:text-green-600 ${pathName === "/installation" && "text-green-500 border-b border-green-600"}`}
+          className={`pb-1 text-xl font-semibold hover:bg-transparent hover:text-green-600 ${pathName === "/installation" && "text-green-500 border-b border-green-600"}`}
           href={"/installation"}
         >
           Installation
@@ -37,7 +37,7 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="w-full shadow-lg">
+      <div className="w-full bg-white shadow-lg sticky top-0 z-10">
         <div className="container mx-auto navbar ">
           <div className="navbar-start">
             <div className="dropdown">
