@@ -11,7 +11,7 @@ const Navbar = () => {
     <>
       <li>
         <Link
-          className={`pb-2 ${pathName === "/" && "text-green-500 border-b border-green-600"}`}
+          className={`pb-1 hover:bg-transparent hover:text-green-600 ${pathName === "/" && "text-green-500 border-b border-green-600"}`}
           href={"/"}
         >
           Home
@@ -19,7 +19,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className={`pb-2 ${pathName === "/apps" && "text-green-500 border-b border-green-600"}`}
+          className={`pb-1 hover:bg-transparent hover:text-green-600 ${pathName === "/apps" && "text-green-500 border-b border-green-600"}`}
           href={"/apps"}
         >
           Apps
@@ -27,7 +27,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className={`pb-2 ${pathName === "/installation" && "text-green-500 border-b border-green-600"}`}
+          className={`pb-1 hover:bg-transparent hover:text-green-600 ${pathName === "/installation" && "text-green-500 border-b border-green-600"}`}
           href={"/installation"}
         >
           Installation
@@ -36,24 +36,59 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className=" shadow">
-      <div className="container mx-auto py-3 flex justify-between items-center gap-6">
-        <figure>
-          <Image
-            src={"/assets/logo.png"}
-            width={50}
-            height={50}
-            alt="navbar image"
-          ></Image>
-        </figure>
-        <ul className="flex justify-between items-center gap-6 font-semibold">
-          {links}
-        </ul>
-        <button className="flex items-center gap-2 font-semibold bg-purple-600 text-white py-2 px-4 rounded-lg">
-          <FaGithub /> Contribute
-        </button>
+    <>
+      <div className="w-full shadow-lg">
+        <div className="container mx-auto navbar ">
+          <div className="navbar-start">
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  {" "}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />{" "}
+                </svg>
+              </div>
+              <ul
+                tabIndex="-1"
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                {links}
+              </ul>
+            </div>
+            <Link href={"/"}>
+              <Image
+                src={"/assets/logo.png"}
+                width={50}
+                height={50}
+                alt="navbar image"
+              ></Image>
+            </Link>
+          </div>
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal px-1">{links}</ul>
+          </div>
+          <div className="navbar-end">
+            <button className="btn flex items-center gap-2 font-semibold bg-purple-600 text-white py-2 px-4 rounded-lg">
+              <FaGithub /> Contribute
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
