@@ -69,14 +69,46 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <Link href={"/"}>
-              <Image
-                src={"/assets/logo.png"}
-                width={50}
-                height={50}
-                alt="navbar image"
-              ></Image>
-            </Link>
+            {/* <div className="items-center gap-4">
+              <Link href={"/"}>
+                <Image
+                  src={"/assets/logo.png"}
+                  width={50}
+                  height={50}
+                  alt="navbar image"
+                ></Image>
+              </Link>
+
+              <span className=" text-2xl font-black tracking-tighter text-purple-500 italic">
+                HERO.IO
+              </span>
+            </div> */}
+            <div className="flex items-center gap-3 group cursor-pointer">
+              {/* Logo Wrapper */}
+              <Link
+                href="/"
+                className="relative transition-transform duration-300 group-hover:scale-105"
+              >
+                <div>
+                  <Image
+                    src="/assets/logo.png"
+                    width={45}
+                    height={45}
+                    alt="HERO.IO Logo"
+                  />
+                </div>
+              </Link>
+
+              {/* Brand Name */}
+              <Link href="/" className="flex flex-col -space-y-1">
+                <span className="text-2xl font-black tracking-tighter text-purple-500 italic">
+                  HERO.IO
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                  Productive Apps
+                </span>
+              </Link>
+            </div>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>

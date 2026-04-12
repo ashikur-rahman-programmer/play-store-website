@@ -104,21 +104,9 @@ const Footer = () => {
             impact, one app at a time.
           </div>
 
-          <div className="flex items-center gap-6">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full border-2 border-[#0B0F19] bg-slate-800 flex items-center justify-center overflow-hidden"
-                >
-                  <img src={`https://i.pravatar.cc/100?u=${i}`} alt="user" />
-                </div>
-              ))}
-            </div>
-            <p className="text-[13px] font-medium text-slate-400">
-              Trusted by 500k+ users
-            </p>
-          </div>
+          <p className="text-[13px] font-medium text-slate-400">
+            Trusted by 500k+ users
+          </p>
         </div>
       </div>
     </footer>
